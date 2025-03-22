@@ -148,7 +148,7 @@ public class BufferedReaderExample {
 | `\"`          | Inserts a double quote (`"`)     |
 | `\\`          | Inserts a backslash (`\`)        |
 
-System.out.println("welcome to \"GeeksforGeeks\"");
+System.out.println("welcome to \\"GeeksforGeeks\\"");
 ---
 
 ### **Quick Summary**
