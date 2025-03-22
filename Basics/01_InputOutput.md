@@ -136,6 +136,19 @@ public class BufferedReaderExample {
 }
 ```
 
+## Escaope Sequence
+| Escape Sequence | Description                      |
+|----------------|----------------------------------|
+| `\t`          | Inserts a tab                    |
+| `\b`          | Inserts a backspace              |
+| `\n`          | Inserts a newline                |
+| `\r`          | Inserts a carriage return        |
+| `\f`          | Inserts a form feed              |
+| `\'`          | Inserts a single quote (`'`)     |
+| `\"`          | Inserts a double quote (`"`)     |
+| `\\`          | Inserts a backslash (`\`)        |
+
+System.out.println("welcome to \"GeeksforGeeks\"");
 ---
 
 ### **Quick Summary**
