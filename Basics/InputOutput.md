@@ -71,6 +71,7 @@ Hello, John! You are 25 years old.
 | `nextLine()`        | Reads a full line of text |
 | `next()`            | Reads a single word |
 | `nextBoolean()`     | Reads a `boolean` value (true/false) |
+| `next().charAt(index)`    | Reads a `character`|
 
 ---
 
