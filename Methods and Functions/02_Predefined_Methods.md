@@ -37,6 +37,14 @@ The `java.lang` package is automatically imported in every Java program.
 | `Arrays.sort(arr)` | Sorts an array | `Arrays.sort(arr)` |
 | `Arrays.toString(arr)` | Converts array to string | `Arrays.toString(arr) → "[1, 2, 3]"` |
 | `Arrays.binarySearch(arr, key)` | Searches for `key` in sorted array | `Arrays.binarySearch(arr, 3)` |
+| `Arrays.copyOf(arr, newLength)` | Copies the array to a new array of specified length | `Arrays.copyOf(arr, 5)` |
+| `Arrays.copyOfRange(arr, start, end)` | Copies a range of elements from an array | `Arrays.copyOfRange(arr, 1, 4)` |
+| `Arrays.fill(arr, value)` | Fills an array with a specified value | `Arrays.fill(arr, 7)` |
+| `Arrays.equals(arr1, arr2)` | Compares two arrays for equality | `Arrays.equals(arr1, arr2)` |
+| `Arrays.asList(arr)` | Converts an array to a List | `Arrays.asList(arr)` |
+| `Arrays.parallelSort(arr)` | Sorts an array using parallel sorting | `Arrays.parallelSort(arr)` |
+| `Arrays.deepToString(arr)` | Converts a multidimensional array to a string | `Arrays.deepToString(arr)` |
+| `Arrays.deepEquals(arr1, arr2)` | Compares two multidimensional arrays | `Arrays.deepEquals(arr1, arr2)` |
 
 ### **2.2 Collections Class Methods** (From `java.util.Collections`)
 | Method | Description | Example |
