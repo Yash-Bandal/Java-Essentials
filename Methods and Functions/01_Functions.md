@@ -217,3 +217,120 @@ Value after method call: 5
 | **Pass by Value** | Java passes copies of variables | `modify(int a)` |
 
 ---
+
+# **Pass by Value vs. Pass by Reference in Java**  
+
+In Java, **all arguments are passed by value**, meaning Java **does not support pass by reference**. However, the behavior differs for **primitive types** and **objects**.  
+
+---
+
+## **1. Pass by Value (Primitive Data Types)**
+When passing **primitive types** (`int`, `double`, `char`, etc.), Java **creates a copy** of the value. Changes inside the method **do not** affect the original value.  
+
+### **Example:**  
+```java
+public class PassByValueExample {
+    public static void modify(int num) {
+        num = num + 10;  // This change is local to the method
+    }
+
+    public static void main(String[] args) {
+        int a = 5;
+        modify(a);
+        System.out.println("Value after method call: " + a); // Output: 5 (Unchanged)
+    }
+}
+```
+**Output:**  
+```
+Value after method call: 5
+```
+**Explanation:**  
+- `modify(a)` creates a **copy** of `a`, so changes inside `modify()` do not affect `a`.
+
+---
+
+## **2. Pass by Value (Objects)**
+When passing **objects**, Java **still passes the reference by value**. This means the reference itself **cannot be changed**, but the **object's internal state can be modified**.
+
+### **Example:**
+```java
+class Example {
+    int x;
+}
+
+public class PassByReferenceExample {
+    public static void modify(Example obj) {
+        obj.x = obj.x + 10;  // Modifying the object's internal state
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.x = 5;
+        
+        modify(obj);
+        System.out.println("Value after method call: " + obj.x); // Output: 15 (Changed)
+    }
+}
+```
+**Output:**  
+```
+Value after method call: 15
+```
+**Explanation:**  
+- The **reference to `obj` is passed by value**, meaning the object itself is not replaced.  
+- However, since both the original and copied references **point to the same object**, modifications affect the actual object.
+
+---
+
+## **3. Why Java Does Not Support Pass by Reference?**  [No Pointer concept]
+In **pass by reference**, the actual memory address (reference) would be passed, allowing reassignment of the original reference inside a method.  
+- In Java, we **cannot change the original reference**, we can only modify the contents of an object.
+
+### **Example (Attempting to Change Reference - Won't Work!)**
+```java
+class Example {
+    int x;
+}
+
+public class PassByReferenceTest {
+    public static void changeReference(Example obj) {
+        obj = new Example();  // Creating a new object (original object remains unchanged)
+        obj.x = 50;
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.x = 10;
+
+        changeReference(obj);
+        System.out.println("Value after method call: " + obj.x); // Output: 10 (Unchanged)
+    }
+}
+```
+**Output:**  
+```
+Value after method call: 10
+```
+**Explanation:**  
+- Inside `changeReference()`, a new object is created, but it does not replace the original `obj` in `main()`.  
+
+---
+
+## **4. Summary Table**
+| Concept | Description | Affects Original Value? |
+|---------|-------------|----------------------|
+| **Pass by Value (Primitives)** | Copies value, changes do not affect original variable | ❌ No |
+| **Pass by Value (Objects)** | Copies reference, changes affect object's state | ✅ Yes (but not reference itself) |
+| **Pass by Reference** | Directly modifies original reference (Not supported in Java) | ❌ No |
+
+---
+
+### **Key Takeaways**
+✔ **Java always passes arguments by value**  
+✔ **For primitives**, a copy is passed, so the original remains unchanged  
+✔ **For objects**, a copy of the reference is passed, so changes affect the object but not the reference  
+✔ **Java does NOT support true pass by reference**  
+
+
+
