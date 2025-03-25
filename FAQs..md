@@ -8,7 +8,7 @@
 - Garbage Collection – JVM manages memory automatically.
 - Simplicity – Eliminates pointer-related complexity.
 - Platform Independence – Ensures portability across different systems.
-### What Replaces Pointers in Java?
+### 3. What Replaces Pointers in Java?
 Java uses references instead of pointers. References allow access to objects without exposing memory addresses.
 
 ```java
